@@ -14,6 +14,6 @@ setuptools.setup(
     url='https://github.com/somerl20/api-rule-engine.git',
     project_urls={},
     license='GNU',
-    packages=setuptools.find_packages(),
+    packages=["api_rule_engine"],
     install_requires=['requests>=2.25.1'],
 )
