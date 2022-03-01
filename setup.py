@@ -11,7 +11,7 @@ setuptools.setup(
     description='rule engine API',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://momerl20@bitbucket.org/minereye/api-rule-engine.git',
+    url='https://github.com/somerl20/api-rule-engine.git',
     license='GNU',
     packages=['api-rule-engine'],
     install_requires=['requests>=2.25.1'],
