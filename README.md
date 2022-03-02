@@ -14,8 +14,7 @@ pip install api-rule-engine
 
 ## Python code example
 -------------------
-.. code-block:: python
-```
+``` python
 from api_rule_engine.client import send_file
 file_path = <add local file path>
 file_metadata = {'file_name': file_path.split('/')[-1], 'file_path': file_path}
