@@ -12,7 +12,7 @@ Python 3.7 or higher
 pip install api-rule-engine
 
 
-## Python code example
+## Scan single file
 ``` python
 from api_rule_engine.client import send_file
 file_path = <add local file path>
