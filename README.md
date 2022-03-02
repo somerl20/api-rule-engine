@@ -54,15 +54,12 @@ for x in threads:
     time.sleep(1)
   
   print(d)
-  {'5.xlsx': {'response_data': {'found_tracking_groups': ''},
-  'response_status': 200},
- 'risk.doc': {'response_data': {'found_tracking_groups': [{'action_id': '1',
-     'category_id': '12',
-     'key': '7',
-     'label_id': 'None',
-     'status': 'added',
-     'tg_name': 'risk.doc'}]},
-  'response_status': 200},
- '1138059831.xls': {'response_data': {'found_tracking_groups': ''},
-  'response_status': 200}}
+  {'5.xlsx': {'found_tracking_groups': ''},
+ '1138059831.xls': {'found_tracking_groups': ''},
+ 'risk.doc': {'found_tracking_groups': [{'action_id': '1',
+    'category_id': '12',
+    'key': '7',
+    'label_id': 'None',
+    'status': 'added',
+    'tg_name': 'risk.doc'}]}}
 ```
