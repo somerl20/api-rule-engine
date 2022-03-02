@@ -32,17 +32,11 @@ with open(file_path, 'rb') as f:
 import os
 import time
 import threading
-from api_rule_engine.client import scan_file
-
-def scan_file_callback(file_name, file_bytes, file_metadata, fields, return_dict):
-    return_dict[file_name] = (scan_file(file_bytes, file_metadata, fields))
+from api_rule_engine.client import scan_file_callback, get_bytes, 
 
 ## example of files list
 file_list = ['../rule_engine/risk.doc', '../rule_engine/1138059831.xls', '../rule_engine/5.xlsx']
 
-def get_bytes(file_path):
-    with open(file_path, 'rb') as f:
-        return f.read()
 ## this is short example of metadata
 def simple_metadata(file_path):
     return {'file_name': file_path.split('/')[-1], 'file_path': file_path}
