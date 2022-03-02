@@ -13,7 +13,6 @@ pip install api-rule-engine
 
 
 ## Python code example
--------------------
 ``` python
 from api_rule_engine.client import send_file
 file_path = <add local file path>
@@ -26,4 +25,4 @@ with open(file_path, 'rb') as f:
     'label_id': 'None', 'status': 'added', 'tg_name': 'risk.doc'}]}, 'response_status': 200}
 
 ```
--------------------
+
