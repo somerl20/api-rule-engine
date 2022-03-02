@@ -13,6 +13,7 @@ pip install api-rule-engine
 
 
 ## Python code example
+-------------------
 .. code-block:: python
 ```
 from api_rule_engine.client import send_file
@@ -22,3 +23,4 @@ with open(file_path, 'rb') as f:
   res = scan_file(f.read(), file_metadata=file_metadata)
   print(f'res: {res}')
 ```
+-------------------
