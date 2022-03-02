@@ -20,6 +20,9 @@ file_path = <add local file path>
 file_metadata = {'file_name': file_path.split('/')[-1], 'file_path': file_path}
 with open(file_path, 'rb') as f:
   res = scan_file(f.read(), file_metadata=file_metadata)
-  print(f'res: {res}')
+
+>>> res
+{'response_data': {'found_tracking_groups': [{'action_id': '1', 'category_id': '12', 'key': '7', 'label_id': 'None', 'status': 'added', 'tg_name': 'risk.doc'}]}, 'response_status': 200}
+
 ```
 -------------------
