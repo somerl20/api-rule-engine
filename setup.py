@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='api-rule-engine',
-    version='0.0.1',
+    version='0.0.2',
     scripts=['api-rule-engine'],
     author='Omer London',
     description='rule engine API',

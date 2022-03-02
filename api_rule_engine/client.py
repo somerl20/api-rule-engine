@@ -25,14 +25,15 @@ def b64_to_str(data):
     return str(base64.b64encode(data), 'UTF-8')
 
 
-def scan_file(file_bytes, file_metadata={}, fields={}):
+def scan_file(file_bytes, file_metadata={}, fields=[]):
     try:
-        assert file_bytes and type(file_bytes) is bytes and type(file_metadata) is dict and type(fields) is dict
+        assert file_bytes and type(file_bytes) is bytes and type(file_metadata) is dict and type(fields) is list,\
+            f'type(file_bytes) bytes ?= :{type(file_bytes)}  type(file_metadata) dict ?= :{type(file_metadata)},' \
+            f' type(fields) list ?= :{type(fields)}'
         res = send_file(file_bytes, file_metadata)
         status_code = res.json().get('response_status')
         start = time.time()
         request_id = res.json().get('response_data', {}).get('request_id')
-        print(f'request_id: {request_id}')
         if status_code != 200 or not request_id:
             raise SystemError(f'error scan the file: {res.json().get("response_data")}')
         while time.time() - start < MAX_WAITING_TIME:
@@ -43,8 +44,7 @@ def scan_file(file_bytes, file_metadata={}, fields={}):
             elif status_code != 200:
                 raise SystemError(answer.text)
             else:
-                print(f'here: {answer.status_code}')
-                return answer.json()
+                return answer.json()['response_data']
     except AssertionError as e:
         print(f"bad input: {e}")
     except SystemError as e:
@@ -53,4 +53,10 @@ def scan_file(file_bytes, file_metadata={}, fields={}):
         print(traceback.format_exc())
 
 
+def scan_file_callback(file_name, file_bytes, file_metadata, fields, return_dict):
+    return_dict[file_name] = (scan_file(file_bytes, file_metadata, fields))
 
+
+def get_bytes(file_path):
+    with open(file_path, 'rb') as f:
+        return f.read()
