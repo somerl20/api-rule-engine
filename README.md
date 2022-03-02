@@ -86,8 +86,8 @@ res
 scan_file(file_bytes: bytes, file_metadata={}, fields={})
 ```
 file_bytes: files bytes,
-file_metadata: dictionary of extra information for finding sensitive information on file<br />
-fields: extra metadata to get by request
+* file_metadata: dictionary of extra information for finding sensitive information on file, for mor details: [full list](doc/input_metadata.md)<br />
+* fields: extra metadata to get by request full list: [full list](doc/extra_field.md)
 ``` python
 scan_file_callback(file_name: str, file_bytes: bytes, file_metadata: dict, fields: list, return_dict: dict)
 ```
