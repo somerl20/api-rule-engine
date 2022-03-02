@@ -43,7 +43,7 @@ file_list = ['../rule_engine/risk.doc', '../rule_engine/1138059831.xls', '../rul
 def get_bytes(file_path):
     with open(file_path, 'rb') as f:
         return f.read()
-## this is 
+## this is short example of metadata
 def simple_metadata(file_path):
     return {'file_name': file_path.split('/')[-1], 'file_path': file_path}
 
