@@ -86,11 +86,11 @@ res
 scan_file(file_bytes: bytes, file_metadata={}, fields={})
 ```
 file_bytes: files bytes,
-file_metadata: dictionary of extra information for finding sensitive information on file,
+file_metadata: dictionary of extra information for finding sensitive information on file<br />
 fields: extra metadata to get by request
 ``` python
 scan_file_callback(file_name: str, file_bytes: bytes, file_metadata: dict, fields: list, return_dict: dict)
 ```
 file_name - file name, 
-return_dict - dict for returning answer
+return_dict - dict for returning answer<br />
 return_dict : {file_name : answer}
