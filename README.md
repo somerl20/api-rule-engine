@@ -21,8 +21,12 @@ with open(file_path, 'rb') as f:
   res = scan_file(f.read(), file_metadata=file_metadata)
 
 >>> res
-{'response_data': {'found_tracking_groups': [{'action_id': '1', 'category_id': '12', 'key': '7',
-    'label_id': 'None', 'status': 'added', 'tg_name': 'risk.doc'}]}, 'response_status': 200}
+{'found_tracking_groups': [{'action_id': '1',
+   'category_id': '12',
+   'key': '7',
+   'label_id': 'None',
+   'status': 'added',
+   'tg_name': 'risk.doc'}]}
 
 ```
 
