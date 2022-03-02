@@ -80,3 +80,16 @@ res
    'status': 'added',
    'tg_name': 'risk.doc'}]}
 ```
+
+## Full Python API
+``` python
+scan_file(file_bytes: bytes, file_metadata={}, fields={})
+```
+file_bytes: files bytes, file_metadata: dictionary of extra information for finding sensitive information on file
+fields: extra metadata to get by request
+``` python
+scan_file_callback(file_name: str, file_bytes: bytes, file_metadata: dict, fields: list, return_dict: dict)
+```
+file_name - file name, 
+return_dict - dict for returning answer
+return_dict : {file_name : answer}
