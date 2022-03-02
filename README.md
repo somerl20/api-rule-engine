@@ -54,7 +54,7 @@ for x in threads:
     time.sleep(1)
   
   print(d)
-  {'5.xlsx': {'found_tracking_groups': ''},
+ {'5.xlsx': {'found_tracking_groups': ''},
  '1138059831.xls': {'found_tracking_groups': ''},
  'risk.doc': {'found_tracking_groups': [{'action_id': '1',
     'category_id': '12',
@@ -63,3 +63,18 @@ for x in threads:
     'status': 'added',
     'tg_name': 'risk.doc'}]}}
 ```
+
+## getting file_metadata
+from api_rule_engine.client import send_file
+file_path = '../rule_engine/risk.doc'
+file_metadata = {'file_name': file_path.split('/')[-1], 'file_path': file_path}
+with open(file_path, 'rb') as f:
+    res = scan_file(f.read(), file_metadata=file_metadata, fields=['fi_entities_nested'])
+res
+{'fi_entities_nested': '[{"display_name": "Email", "id": 10, "values": ["sales@symtrex.com"], "count": 1, "pi_score": 78.9806835921147}, {"display_name": "Full name", "id": 160, "values": ["Lynne Krekeler"], "count": 1, "pi_score": 86.41661304637691}]',
+ 'found_tracking_groups': [{'action_id': '1',
+   'category_id': '12',
+   'key': '7',
+   'label_id': 'None',
+   'status': 'added',
+   'tg_name': 'risk.doc'}]}
