@@ -65,6 +65,7 @@ for x in threads:
 ```
 
 ## getting file_metadata
+``` python
 from api_rule_engine.client import send_file
 file_path = '../rule_engine/risk.doc'
 file_metadata = {'file_name': file_path.split('/')[-1], 'file_path': file_path}
@@ -78,3 +79,4 @@ res
    'label_id': 'None',
    'status': 'added',
    'tg_name': 'risk.doc'}]}
+```
