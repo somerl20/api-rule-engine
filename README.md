@@ -14,7 +14,7 @@ pip install api-rule-engine
 
 ## Python code example
 ``` python
-from api_rule_engine.client import send_file
+from api_rule_engine.client import scan_file_file
 file_path = <add local file path>
 file_metadata = {'file_name': file_path.split('/')[-1], 'file_path': file_path}
 with open(file_path, 'rb') as f:
